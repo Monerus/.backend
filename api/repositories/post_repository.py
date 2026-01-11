@@ -29,7 +29,8 @@ async def create_post(posts_in: PostBase,
 
 #Получение поста пользователя
 @router.get("/{user_id}/", response_model=None, status_code=status.HTTP_200_OK)
-async def get_posts(user_id: int, session: AsyncSession = Depends(db_helper.scoped_session_dependency)) -> List[Posts]:
+async def get_posts(user_id: int, 
+                    session: AsyncSession = Depends(db_helper.scoped_session_dependency)) -> List[Posts]:
     result = await session.execute(select(Posts)
                                    .where(Posts.users_id == user_id)
                                    .order_by(Posts.created_at))
