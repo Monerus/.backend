@@ -3,7 +3,6 @@ from datetime import datetime
 
 class MessageBase(BaseModel):
     message_text: str
-    sender_id: int
     recipient_id: int
 
 class MessageCreate(MessageBase):

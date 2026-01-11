@@ -9,6 +9,8 @@ from api.repositories.vote_repository import router as vote_router
 
 app = FastAPI()
 
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
@@ -16,6 +18,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(user_router)
 app.include_router(messages_router)
