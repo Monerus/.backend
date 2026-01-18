@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
-
+import psycopg2
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 class Settings(BaseSettings):
@@ -27,11 +27,14 @@ class Settings(BaseSettings):
        
     @property
     def db_url(self) -> str:
-        return (
-            f"postgresql+asyncpg://"
-            f"{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}"
-            f"@127.0.0.1:5432/{self.POSTGRES_DB}"
-        )
+        # return (
+        #     f"postgresql+asyncpg://"
+        #     f"{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}"
+        #     f"@127.0.0.1:5432/{self.POSTGRES_DB}"
+        # )
+        return  (
+            f"postgresql+asyncpg://db_q6ew_user:lmXIW3j8eJlAiFHa2IY1HnsG1cAFBdg1@dpg-d56s6ure5dus73cvlemg-a.oregon-postgres.render.com/db_q6ew"
+            )
         
     model_config = SettingsConfigDict(env_file=".env", extra='ignore', env_file_encoding='utf-8')
 

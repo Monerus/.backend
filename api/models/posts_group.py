@@ -1,15 +1,16 @@
 from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
-class PostBase(BaseModel):
+class PostGroupBase(BaseModel):
     text: str
     imageURL: str
+    group_id: int
 
-class PostsCreate(PostBase):
+class PostsGroupCreate(PostGroupBase):
     pass
 
-class PostsResponse(PostBase):
+class PostsGroupResponse(PostGroupBase):
     model_config = ConfigDict(from_attributes=True)
     id: int
-    created_at: datetime
     author_id: int
+    created_at: datetime

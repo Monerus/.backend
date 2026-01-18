@@ -6,9 +6,12 @@ all = [
     "Message",
     "Comments", 
     "Base", 
-    "Transaction"
+    "Transaction", 
+    "Group",
+    "Subscriptions",
+    "PostsGroup"
 ]
 
-from .users import Users, Posts, Message, Comments, Transaction
+from .users import Users, Posts, Message, Comments, Transaction, Group, Subscriptions, PostsGroup
 from .base import Base
 from .utils import db_helper
