@@ -21,10 +21,10 @@ class Settings(BaseSettings):
     POSTGRES_CONNECT: str
     
     #REDIS
-    REDIS_HOST: str
-    REDIS_PORT: int
-    REDIS_PASSWORD: str
-    REDIS_DB: int
+    # REDIS_HOST: str
+    # REDIS_PORT: int
+    # REDIS_PASSWORD: str
+    # REDIS_DB: int
        
     @property
     def db_url(self) -> str:
